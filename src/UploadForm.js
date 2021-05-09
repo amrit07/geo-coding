@@ -25,7 +25,7 @@ export default function UploadForm() {
     const blobURL = window.URL.createObjectURL(blob);
 
     const anchor = document.createElement('a');
-    anchor.download = 'asd.csv';
+    anchor.download = 'LatLong.csv';
     anchor.href = blobURL;
     anchor.dataset.downloadurl = [
       'text/csv',
