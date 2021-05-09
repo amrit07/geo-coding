@@ -20,8 +20,10 @@ const post = async (req, res) => {
 
 const processFile = (file, res) => {
   const result = [];
+  console.log('processing file', process.env.GOOGLE_API_KEY, process.env);
   fs.createReadStream(file.path)
     .on('error', () => {
+      console.log('unable to read file');
       res.status(400).end('unable to read file');
     })
     .pipe(csvParser())
