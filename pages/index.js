@@ -5,6 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import UploadForm from '../src/UploadForm';
+import DistanceForm from '../src/DistanceForm';
 
 function Copyright() {
   const classes = useStyles();
@@ -101,6 +102,7 @@ export default function Checkout() {
               Get geo coordinates
             </Typography>
             <UploadForm />
+            <DistanceForm />
           </Paper>
           <Copyright />
         </main>
