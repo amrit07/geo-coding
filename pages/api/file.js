@@ -75,9 +75,9 @@ function formatResult(result, geoResponse) {
 async function getLangLat(address) {
   try {
     const res = await fetch(
-      `https://maps.googleapis.com/maps/api/geocode/json?address=${Object.values(
-        address
-      ).join(',')}&key=${API_KEY}`
+      `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
+        Object.values(address).join(',')
+      )}&key=${API_KEY}`
     );
     const data = await res.json();
     return data.results;
