@@ -14,6 +14,9 @@ export const config = {
 const post = async (req, res) => {
   const form = new formidable.IncomingForm();
   form.parse(req, async function (err, fields, files) {
+    if (err) {
+      console.log('Unable to Parse file');
+    }
     processFile(files.file, res);
   });
 };
@@ -79,7 +82,12 @@ async function getLangLat(address) {
     const data = await res.json();
     return data.results;
   } catch (e) {
-    console.log('Error fetching from google:', e);
+    console.log(
+      'Error fetching from google: Address : ',
+      address,
+      ' Error: ',
+      e
+    );
     return [];
   }
 }
